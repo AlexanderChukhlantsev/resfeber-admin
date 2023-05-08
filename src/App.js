@@ -10,6 +10,7 @@ import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
 import { excursionColumns, placeColumns, userColumns } from "./datatablesource";
+import NewPlace from "./pages/newPlace/NewPlace";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -37,10 +38,10 @@ function App() {
             </Route>
             <Route path="places">
               <Route index element={<ProtectedRoute><List columns={placeColumns}/></ProtectedRoute>} />
-              <Route path=":placeId" element={<ProtectedRoute><Single /></ProtectedRoute>} />
+              <Route path=":productId" element={<ProtectedRoute><Single /></ProtectedRoute>} />
               <Route
                 path="new"
-                element={<ProtectedRoute><New inputs={placeInputs} title="Добавить место" /></ProtectedRoute>}
+                element={<ProtectedRoute><NewPlace /></ProtectedRoute>}
               />
             </Route>
 						<Route path="excursions">

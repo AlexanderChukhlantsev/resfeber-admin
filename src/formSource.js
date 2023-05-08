@@ -118,6 +118,18 @@ export const placeInputs = [
     type: "text",
     placeholder: "цена в рублях, за самую дешевую экскурсию",
   },
+	{
+    id: "rating",
+    label: "Рейтинг",
+    type: "text",
+    placeholder: "рейтинг места, например 4.6",
+  },
+	{
+    id: "ratingDesc",
+    label: "Описание рейтинга",
+    type: "text",
+    placeholder: "превосходно/отлично/хорошо",
+  },
 ];
 
 export const excursionInputs = [

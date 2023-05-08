@@ -1,10 +1,10 @@
-import "./new.scss";
+import "./newExcursion.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import { useState } from "react";
 
-const New = ({ inputs, title }) => {
+const NewExcursion = ({ inputs, title }) => {
   const [file, setFile] = useState("");
 
   return (
@@ -46,7 +46,7 @@ const New = ({ inputs, title }) => {
                   <input type={input.type} placeholder={input.placeholder} />
                 </div>
               ))}
-              <button>Send</button>
+              <button>Отравить</button>
             </form>
           </div>
         </div>
@@ -55,4 +55,4 @@ const New = ({ inputs, title }) => {
   );
 };
 
-export default New;
+export default NewExcursion;

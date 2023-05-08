@@ -64,12 +64,12 @@ export const excursionColumns = [
   {
     field: "title",
     headerName: "Название",
-    width: 230,
+    width: 300,
   },
   {
     field: "desc",
     headerName: "Описание",
-    width: 200,
+    width: 300,
   },
   {
     field: "price",
