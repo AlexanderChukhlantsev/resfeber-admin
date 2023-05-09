@@ -53,10 +53,10 @@ const NewExcursion = () => {
                 </div>
               ))}
               <div className="formInput">
-                <label>Экскурсии</label>
+                <label>Номер экскурсии</label>
                 <textarea
                   onChange={(e) => setExcursions(e.target.value)}
-                  placeholder="введи номер экскурсии (деф. 1)"
+                  placeholder="введи номер экскурсии у тур. места"
                 />
               </div>
               <div className="formInput">

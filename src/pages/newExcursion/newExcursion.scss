@@ -42,6 +42,13 @@
 
           .formInput {
             width: 40%;
+						
+						textarea {
+							min-width: 620px;
+							max-width: 620px;
+							min-height: 20px;
+							max-height: 20px;
+						}
 
             label {
               display: flex;
