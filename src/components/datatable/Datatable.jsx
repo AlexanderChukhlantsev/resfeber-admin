@@ -19,25 +19,27 @@ const Datatable = ({columns}) => {
 		try {
 			await axios.delete(`/${path}/${id}`);
 			setList(list.filter((item) => item._id !== id));
-		} catch (err) {}
+		} catch (err) {
+			console.log(err);
+		}
   };
 
   const actionColumn = [
     {
       field: "action",
-      headerName: "Action",
+      headerName: "Действия",
       width: 200,
       renderCell: (params) => {
         return (
           <div className="cellAction">
             <Link to="/users/test" style={{ textDecoration: "none" }}>
-              <div className="viewButton">View</div>
+              <div className="viewButton">Просмотр</div>
             </Link>
             <div
               className="deleteButton"
               onClick={() => handleDelete(params.row._id)}
             >
-              Delete
+              Удалить
             </div>
           </div>
         );
@@ -47,9 +49,9 @@ const Datatable = ({columns}) => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-        Add New User
+        Редактирование списка {path}
         <Link to={`/${path}/new`} className="link">
-          Add New
+          Добавить
         </Link>
       </div>
       <DataGrid

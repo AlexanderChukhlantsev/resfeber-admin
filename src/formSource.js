@@ -137,7 +137,7 @@ export const excursionInputs = [
     id: "title",
     label: "Название",
     type: "text",
-    placeholder: "экс. по какому то месту",
+    placeholder: "указать по какому месту экскурсия",
   },
   {
     id: "desc",

@@ -11,6 +11,7 @@ import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
 import { excursionColumns, placeColumns, userColumns } from "./datatablesource";
 import NewPlace from "./pages/newPlace/NewPlace";
+import NewExcursion from "./pages/newExcursion/NewExcursion"
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -38,7 +39,7 @@ function App() {
             </Route>
             <Route path="places">
               <Route index element={<ProtectedRoute><List columns={placeColumns}/></ProtectedRoute>} />
-              <Route path=":productId" element={<ProtectedRoute><Single /></ProtectedRoute>} />
+              <Route path=":placeId" element={<ProtectedRoute><Single /></ProtectedRoute>} />
               <Route
                 path="new"
                 element={<ProtectedRoute><NewPlace /></ProtectedRoute>}
@@ -49,7 +50,7 @@ function App() {
               <Route path=":excursionId" element={<ProtectedRoute><Single /></ProtectedRoute>} />
               <Route
                 path="new"
-                element={<ProtectedRoute><New inputs={excursionInputs} title="Добавить экскурсию" /></ProtectedRoute>}
+                element={<ProtectedRoute><NewExcursion /></ProtectedRoute>}
               />
             </Route>
           </Route>

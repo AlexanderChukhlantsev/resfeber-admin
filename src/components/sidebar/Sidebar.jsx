@@ -27,11 +27,11 @@ const Sidebar = () => {
       <hr />
       <div className="center">
         <ul>
-          <p className="title">MAIN</p>
+          <p className="title">СТАТИСТИКА</p>
           <li>
             <DashboardIcon className="icon" />
 						<Link to="/" style={{ textDecoration: "none" }}>
-            	<span>Dashboard</span>
+            	<span>Панель статистики</span>
 						</Link>
           </li>
           <p className="title">СПИСКИ</p>
@@ -57,36 +57,36 @@ const Sidebar = () => {
             <LocalShippingIcon className="icon" />
             <span>Delivery</span>
           </li>
-          <p className="title">USEFUL</p>
+          <p className="title">ПОЛЕЗНОЕ</p>
           <li>
             <InsertChartIcon className="icon" />
-            <span>Stats</span>
+            <span>Подбор статистики</span>
           </li>
           <li>
             <NotificationsNoneIcon className="icon" />
-            <span>Notifications</span>
+            <span>Уведомления</span>
           </li>
-          <p className="title">SERVICE</p>
+          <p className="title">СЕРВИС</p>
           <li>
             <SettingsSystemDaydreamOutlinedIcon className="icon" />
-            <span>System Health</span>
+            <span>Здоровье системы</span>
           </li>
           <li>
             <PsychologyOutlinedIcon className="icon" />
-            <span>Logs</span>
+            <span>Логи</span>
           </li>
           <li>
             <SettingsApplicationsIcon className="icon" />
-            <span>Settings</span>
+            <span>Настройки</span>
           </li>
-          <p className="title">USER</p>
+          <p className="title">ПОЛЬЗОВАТЕЛЬ</p>
           <li>
             <AccountCircleOutlinedIcon className="icon" />
-            <span>Profile</span>
+            <span>Профиль</span>
           </li>
           <li>
             <ExitToAppIcon className="icon" />
-            <span>Logout</span>
+            <span>Выйти</span>
           </li>
         </ul>
       </div>
