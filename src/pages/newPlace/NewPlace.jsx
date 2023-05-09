@@ -6,11 +6,13 @@ import { useState } from "react";
 import {placeInputs} from "../../formSource.js";
 import useFetch from "../../hooks/useFetch";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const NewPlace = () => {
   const [files, setFiles] = useState("");
 	const [info, setInfo] = useState({});
 	const [excursions, setExcursions] = useState([]);
+	const navigate = useNavigate();
 
 	const {data, loading, error} = useFetch("/excursions");
 
@@ -34,19 +36,17 @@ const NewPlace = () => {
             "https://api.cloudinary.com/v1_1/dxxqltpzq/image/upload",
             data
           );
-
           const { url } = uploadRes.data;
           return url;
         })
       );
-
       const newplace = {
         ...info,
         excursions,
         photos: list,
       };
-
       await axios.post("/places", newplace);
+			navigate(-1);
     } catch (err) {console.log(err)}
   };
 

@@ -59,10 +59,10 @@ const Sidebar = () => {
 							<span>Экскурсии</span>
 						</li>
 					</Link>
-          <li>
+          {/* <li>
             <LocalShippingIcon className="icon" />
             <span>Delivery</span>
-          </li>
+          </li> */}
           <p className="title">ПОЛЕЗНОЕ</p>
           <li>
             <InsertChartIcon className="icon" />

@@ -5,12 +5,13 @@ import { useState } from "react";
 import { excursionInputs } from "../../formSource.js";
 import useFetch from "../../hooks/useFetch";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const NewExcursion = () => {
   const [info, setInfo] = useState({});
   const [placeId, setPlaceId] = useState(undefined);
   const [excursions, setExcursions] = useState([]);
-
+	const navigate = useNavigate();
   const { data, loading, error } = useFetch("/places");
 
   const handleChange = (e) => {
@@ -22,6 +23,7 @@ const NewExcursion = () => {
     const excursionNumbers = excursions.split(",").map((excursion) => ({ number: excursion }));
     try {
       await axios.post(`/excursions/${placeId}`, { ...info, excursionNumbers });
+			navigate(-1);
     } catch (err) {
       console.log(err);
     }
