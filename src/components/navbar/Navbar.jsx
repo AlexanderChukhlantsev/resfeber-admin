@@ -8,10 +8,11 @@ import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutline
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
   const { dispatch } = useContext(DarkModeContext);
-
+	const { user } = useContext(AuthContext);
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -22,7 +23,7 @@ const Navbar = () => {
         <div className="items">
           <div className="item">
             <LanguageOutlinedIcon className="icon" />
-            Русский
+						<div className="itemText">Русский</div>
           </div>
           <div className="item">
             <DarkModeOutlinedIcon
@@ -35,21 +36,22 @@ const Navbar = () => {
           </div> */}
           <div className="item">
             <NotificationsNoneOutlinedIcon className="icon" />
-            <div className="counter">1</div>
+            <div className="counter">0</div>
           </div>
           <div className="item">
             <ChatBubbleOutlineOutlinedIcon className="icon" />
-            <div className="counter">2</div>
+            <div className="counter">0</div>
           </div>
           {/* <div className="item">
             <ListOutlinedIcon className="icon" />
           </div> */}
           <div className="item">
             <img
-              src="https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              src={user.img || "https://icon-library.com/images/no-user-image-icon/no-user-image-icon-0.jpg"}
               alt=""
               className="avatar"
             />
+						<div className="itemUsername">{user.username}</div>
           </div>
         </div>
       </div>
