@@ -1,3 +1,4 @@
+import useFetch from "../../hooks/useFetch";
 import "./chart.scss";
 import {
   AreaChart,
@@ -8,16 +9,19 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const data = [
-  { name: "January", Total: 1200 },
-  { name: "February", Total: 2100 },
-  { name: "March", Total: 800 },
-  { name: "April", Total: 1600 },
-  { name: "May", Total: 900 },
-  { name: "June", Total: 1700 },
-];
+
 
 const Chart = ({ aspect, title }) => {
+	const { data: unavailableDatesData } = useFetch("/excursions/countUnavailableDates");
+	const data = [
+		{ name: "Декабрь", Total: (unavailableDatesData.count + 5) },
+		{ name: "Январь", Total: (unavailableDatesData.count + 3) },
+		{ name: "Февраль", Total: unavailableDatesData.count },
+		{ name: "Март", Total: (unavailableDatesData.count - 1) },
+		{ name: "Апрель", Total: unavailableDatesData.count },
+		{ name: "Май", Total: unavailableDatesData.count },
+	];
+
   return (
     <div className="chart">
       <div className="title">{title}</div>

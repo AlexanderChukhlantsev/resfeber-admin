@@ -1,4 +1,8 @@
 .table {
+	.tableItem {
+		word-break: break-all;
+		white-space: pre;
+	}
   .cellWrapper {
     display: flex;
     align-items: center;
