@@ -11,7 +11,10 @@ import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
 import { excursionColumns, placeColumns, userColumns } from "./datatablesource";
 import NewPlace from "./pages/newPlace/NewPlace";
-import NewExcursion from "./pages/newExcursion/NewExcursion"
+import NewExcursion from "./pages/newExcursion/NewExcursion";
+import EditUser from "./pages/editUser/EditUser";
+import EditPlace from "./pages/editPlace/EditPlace";
+import EditExcursion from "./pages/editExcursion/EditExcursion";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -36,6 +39,10 @@ function App() {
                 path="new"
                 element={<ProtectedRoute><New inputs={userInputs} title="Добавить пользователя" /></ProtectedRoute>}
               />
+							<Route
+                path="edit/:userId"
+                element={<ProtectedRoute><EditUser inputs={userInputs} title="Редактировать пользователя" /></ProtectedRoute>}
+              />
             </Route>
             <Route path="places">
               <Route index element={<ProtectedRoute><List columns={placeColumns}/></ProtectedRoute>} />
@@ -44,6 +51,10 @@ function App() {
                 path="new"
                 element={<ProtectedRoute><NewPlace /></ProtectedRoute>}
               />
+							<Route
+                path="edit/:placeId"
+                element={<ProtectedRoute><EditPlace inputs={placeInputs} title="Редактировать тур. место" /></ProtectedRoute>}
+              />
             </Route>
 						<Route path="excursions">
               <Route index element={<ProtectedRoute><List columns={excursionColumns}/></ProtectedRoute>} />
@@ -51,6 +62,10 @@ function App() {
               <Route
                 path="new"
                 element={<ProtectedRoute><NewExcursion /></ProtectedRoute>}
+              />
+							<Route
+                path="edit/:excursionId"
+                element={<ProtectedRoute><EditExcursion inputs={excursionInputs} title="Редактировать экскурсию" /></ProtectedRoute>}
               />
             </Route>
           </Route>

@@ -17,6 +17,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
 const Sidebar = () => {
+	const { user } = useContext(AuthContext);
 	const {dispatch: authDispatch} = useContext(AuthContext);
 	const handleClick = async e => {
 		e.preventDefault()
@@ -59,10 +60,12 @@ const Sidebar = () => {
 							<span>Экскурсии</span>
 						</li>
 					</Link>
-          {/* <li>
-            <LocalShippingIcon className="icon" />
-            <span>Delivery</span>
-          </li> */}
+					{/* <Link to="/excursions" style={{ textDecoration: "none" }}>
+						<li>
+							<LocalShippingIcon className="icon" />
+							<span>Заявки</span>
+						</li>
+					</Link> */}
           <p className="title">ПОЛЕЗНОЕ</p>
           <li>
             <InsertChartIcon className="icon" />
@@ -86,10 +89,12 @@ const Sidebar = () => {
             <span>Настройки</span>
           </li>
           <p className="title">ПОЛЬЗОВАТЕЛЬ</p>
-          <li>
-            <AccountCircleOutlinedIcon className="icon" />
-            <span>Профиль</span>
-          </li>
+					<Link to={`/users/${user._id}`} style={{ textDecoration: "none" }}>
+						<li>
+							<AccountCircleOutlinedIcon className="icon" />
+							<span>Профиль</span>
+						</li>
+					</Link>
           <li onClick={handleClick}>
             <ExitToAppIcon className="icon" />
             <span>Выйти</span>
