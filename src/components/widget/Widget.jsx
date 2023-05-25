@@ -30,7 +30,7 @@ const Widget = ({ type }) => {
       break;
     case "places":
       dataType = {
-        title: "КОЛ-ВО МЕСТ",
+        title: "КОЛ-ВО ТУР. МЕСТ",
         isMoney: false,
         link: "Посмотреть все",
         icon: (

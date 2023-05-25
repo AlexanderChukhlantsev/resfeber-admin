@@ -73,7 +73,7 @@ const NewPlace = () => {
             <form>
               <div className="formInput">
                 <label htmlFor="file">
-                  Image: <DriveFolderUploadOutlinedIcon className="icon" />
+                  Изображения: <DriveFolderUploadOutlinedIcon className="icon" />
                 </label>
                 <input
                   type="file"

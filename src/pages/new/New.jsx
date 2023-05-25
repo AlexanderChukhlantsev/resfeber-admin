@@ -60,7 +60,7 @@ const New = ({ inputs, title }) => {
             <form>
               <div className="formInput">
                 <label htmlFor="file">
-                  Image: <DriveFolderUploadOutlinedIcon className="icon" />
+                  Изображение: <DriveFolderUploadOutlinedIcon className="icon" />
                 </label>
                 <input
                   type="file"
