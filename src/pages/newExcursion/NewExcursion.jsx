@@ -29,7 +29,7 @@ const NewExcursion = () => {
     }
   };
 
-  console.log(info)
+  // console.log(info)
   return (
     <div className="new">
       <Sidebar />

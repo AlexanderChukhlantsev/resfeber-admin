@@ -8,8 +8,10 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import useFetch from "../../hooks/useFetch";
 import moment from 'moment';
+import 'moment/locale/ru';
 
 const List = () => {
+	moment.locale('ru');
 	const { data } = useFetch("/excursions/getExcursionData");
   return (
     <TableContainer component={Paper} className="table">
@@ -32,7 +34,8 @@ const List = () => {
               <TableCell className="tableCell tableItem">{data.excursionTitle}</TableCell>
 							<TableCell className="tableCell tableItem">
 								{data.unavailableDates.map((date) => (
-									<div key={date}>{moment(date).format('YYYY-MM-DD, h:mm:ss')}</div>
+									// <div key={date}>{moment(date).format('LLLL')}</div>
+									<div key={date}>{moment.utc(date).utcOffset(180).format('LLLL')}</div>
 								))}
 							</TableCell>
             </TableRow>

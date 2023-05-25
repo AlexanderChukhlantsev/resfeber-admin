@@ -37,10 +37,6 @@ const Single = () => {
 							<span className="itemValue">{locId.country}</span>
 						</div>
 						<div className="detailItem">
-							<span className="itemKey">Страна:</span>
-							<span className="itemValue">{locId.country}</span>
-						</div>
-						<div className="detailItem">
 							<span className="itemKey">Город:</span>
 							<span className="itemValue">{locId.city}</span>
 						</div>
